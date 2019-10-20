@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <div>
+        The current price of one {{price["name"]}} ({{price["symbol"]}}) share is
+               {{ price["price"] | usd }}.
+    </div>
+    <br>
+    <div>
+        <a href = http://ide50-estherlyoon.legacy.cs50.io:8080/quote>Back to quote.</a>
+    </div>
+{% endblock %}

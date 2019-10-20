@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <!-- https://getbootstrap.com/docs/4.0/content/tables/#bordered-table -->
+    <table class="table">
+        <thead>
+            <tr class="text">
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in history %}
+            <tr>
+                <td  class="text">{{ stock.symbol }}</td>
+                <td  class="text">{{ stock.shares }}</td>
+                <td  class="text">{{ stock.price | usd }}</td>
+                <td  class="text">{{ stock.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
